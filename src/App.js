@@ -6,9 +6,9 @@ import { BrowserRouter, Switch, Route, matchPath } from 'react-router-dom';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
 class App extends Component {
-  // const isLoginPathActive = !!matchPath(this.props.location.pathname, '/');
-
+  // const isLoginPathActive = this.props.match.path;
   render() {
+    
     return (
     <BrowserRouter>
       <div className="App">
