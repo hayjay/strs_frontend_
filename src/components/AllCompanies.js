@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
 const AllCompanies = () => {
     return (
@@ -18,14 +19,16 @@ const AllCompanies = () => {
             <div className="row">
                 
                 <div className="col">
-                    <div className="card" style={{ width: '18rem' }}>
-                        <div className="card-body">
-                            <h5 className="card-title">MICROSOFT NIGERIA</h5>
-                            <h6 className="card-subtitle mb-2 text-muted"><a href="">www.microsoft.com</a></h6>
-                            <p className="card-text">133, House 159 United States.</p>                            
-                            
+                    <Link to="/view-company/microsoft">
+                        <div className="card" style={{ width: '18rem' }}>
+                            <div className="card-body">
+                                <h5 className="card-title">MICROSOFT NIGERIA</h5>
+                                <h6 className="card-subtitle mb-2 text-muted"><a href="">www.microsoft.com</a></h6>
+                                <p className="card-text">133, House 159 United States.</p>                            
+                                
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
 
                 <div className="col">
