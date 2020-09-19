@@ -33,10 +33,10 @@ const Navbar = () => {
             
             </ul>
 
-            <div className="" style={{ position:'relative' }}>
+            {/* <div className="" style={{ position:'relative' }}>
                 <input type="checkbox" id="switch" />
                 <label for="switch">Switch</label>
-            </div>
+            </div> */}
         </div>
     )
 }
