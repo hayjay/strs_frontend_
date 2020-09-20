@@ -38,7 +38,7 @@ class Login extends Component {
         
         login(this.state)
             .then((res) => {
-                window.location = '/reports';
+                window.location = '/dashboard';
                 toast.success("Login Successful!", {
                         position : toast.POSITION.TOP_RIGHT
                 });
@@ -58,7 +58,7 @@ class Login extends Component {
         const userAuth = isAuthenticated();
         if(userAuth) {
             const { from } = this.props.location.state || { 
-                from : { pathname : '/reports' } 
+                from : { pathname : '/dashboard' } 
             }
             /**
              * If user is already authenticated then the application should redirect the user to where he was coming from.
