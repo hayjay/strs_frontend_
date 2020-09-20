@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PageTitle from './partials/PageTitle';
 
-const AddCompany = () => {
-    return (
-        <div className="container" style={{ marginTop:'3%' }}>
-            <div className="row justify-content-md-center">
-                <div className="col-2">
-                </div>
-                <div class="col-md-auto">
-                        <h4 style={{ color: '#007bff' }}>
-                            ADD COMPANY
-                        </h4>
-                </div>
-                <div className="col-2">
-                </div>
-            </div>
+class AddCompany extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            company_name : '',
+            sector : '',
+            email : '',
+            phone : '',
+            website : '',
+            office_address : '',
+            is_loading : false
+        }
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name] : event.target.value
+        });
+    }
+
+    addCompany = (event) => {
+        event.preventDefault();
+        
+        this.setState({
+            is_loading:true
+        });
+    }
+
+    render() {
+
+        return (
+            <div className="container" style={{ marginTop:'3%' }}>
+            <PageTitle title="ADD NEW COMPANY"/>
 
             <div className="row">
                 <div className="col-3">
@@ -24,12 +44,12 @@ const AddCompany = () => {
                     <form>
                         <div className="form-group">
                             <label for="exampleInputEmail1">Company Name</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Company name"/>
+                            <input type="text" name="company_name" onChange={this.handleChange} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Company name"/>
                         </div>
                         <div className="form-group">
                             <label for="exampleInputEmail1">Sector</label>
-                            <select className="custom-select">
-                                <option selected>Select One</option>
+                            <select required className="custom-select" onChange={this.handleChange} name="sector">
+                                <option selected value="">Select One</option>
                                 <option value="1">Finance & Accounting</option>
                                 <option value="2">Agriculture</option>
                                 <option value="3">Information Communication Technology</option>
@@ -37,19 +57,19 @@ const AddCompany = () => {
                         </div>
                         <div className="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address"/>
+                            <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address"/>
                         </div>
                         <div className="form-group">
                             <label for="exampleInputEmail1">Phone Number</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone number"/>
+                            <input type="number" name="phone" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone number"/>
                         </div>
                         <div className="form-group">
                             <label for="exampleInputEmail1">Website</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Website"/>
+                            <input type="text" name="website" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Website"/>
                         </div>
                         <div className="form-group">
                             <label for="exampleInputEmail1">Office Address</label>
-                            <textarea className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Office Address" name="" id="" cols="5" rows="2" ></textarea>
+                            <textarea name="office_address" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Office Address" name="" id="" cols="5" rows="2" ></textarea>
                         </div>
                         
                         <center>
@@ -62,7 +82,9 @@ const AddCompany = () => {
 			</div>
             
         </div>
-    )
+        )
+        
+    }
 }
 
 export default AddCompany

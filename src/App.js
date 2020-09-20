@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Login from './components/Login';
 import Navbar from './components/Navbar';
 import ViewCompany from './components/ViewCompany';
-import AddCompany from './components/AddCompany';
+import AddCompany from './components/Company/create';
 import Reports from './components/Reports';
 import ReportByCompany from './components/ReportByCompany';
 import AddReport from './components/AddReport';
