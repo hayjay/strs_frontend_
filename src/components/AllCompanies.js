@@ -8,7 +8,7 @@ const AllCompanies = () => {
                 <div className="col-2">
                 </div>
                 <div className="col-md-auto">
-                        <h4 style={{ color: '#333;' }}>
+                        <h4 style={{ color: '#333' }}>
                             ALL COMPANIES
                         </h4>
                 </div>
